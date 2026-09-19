@@ -1,0 +1,5 @@
+Total Revenue = SUMX(order_items, order_items[quantity] * order_items[unit_price])
+Delivered Orders = CALCULATE(DISTINCTCOUNT(orders[order_id]), orders[order_status] = "delivered")
+Purchasing Customers = CALCULATE(DISTINCTCOUNT(orders[customer_id]), orders[order_status] = "delivered")
+Average Order Value = DIVIDE([Total Revenue], [Delivered Orders], 0)
+Average Review Score = AVERAGE(reviews[review_score])
